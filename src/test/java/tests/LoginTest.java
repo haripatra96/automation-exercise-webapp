@@ -19,12 +19,13 @@ public class LoginTest extends BaseTest{
 		landingPage.clickProducts();
 	}
 	
-	@Test
+	@Test(alwaysRun = false)
 	public void invalidLogin() {
 		LoginPage loP =landingPage.clickLogin();
-		loP.login(ConfigLoader.getInstance().getValue("username"), "dkfsdkfkd");
+		loP.login("jshdk@gmail.com", "dkfsdkfkd");
 //		landingPage.clickProducts();
-		Assert.assertEquals("Your email or password is incorrect!", loP.isFailed());
+		String failed = loP.isFailed();
+		Assert.assertEquals("Your email or password is incorrect!", failed);
 	}
 
 }

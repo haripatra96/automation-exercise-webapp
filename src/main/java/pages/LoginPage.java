@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class LoginPage extends BasePage{
 	
 	WebDriver driver;
 	
@@ -41,12 +41,14 @@ public class LoginPage {
 		loginBttn.click();
 	}
 	
-	public void logininvalid(String username, String password) {
+	public void logininvalid(String username, String password) throws InterruptedException {
 		loginEmail.sendKeys(username);
 		loginPassword.sendKeys(password);
 		loginBttn.click();
+		Thread.sleep(5000);
 	}
 	public String isFailed() {
+			waitForApperElement(errorMsg);
 			return errorMsg.getText();
 	}
 	public SignUpPage signUp(String name, String email) {

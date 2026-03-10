@@ -21,7 +21,13 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.5.4</version>
 				<configuration>
+					<!-- Ignore test failures so build continues -->
 					<testFailureIgnore>true</testFailureIgnore>
+
+					<!-- Use TestNG suite -->
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
 				</configuration>
 			</plugin>
 		</plugins>

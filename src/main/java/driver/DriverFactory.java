@@ -15,7 +15,7 @@ public class DriverFactory {
 
 	public static void initDriver() {
 
-//		String broswer = ConfigLoader.getInstance().getBrowser(); if we need the browser inform from property
+//		String browser = ConfigLoader.getInstance().getBrowser(); if we need the browser inform from property
 		
 		
 		String browser = System.getProperty("browser", "chrome"); // passing the browser value through cmd prompt, if no value is passed chrome is the default
